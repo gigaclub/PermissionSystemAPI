@@ -36,7 +36,7 @@ public class PermissionSystem {
         return null;
     }
 
-    public int setGroups(String playerUUID, int[] groupIds) {
+    public int setGroups(String playerUUID, List<Integer> groupIds) {
         try {
             return (int) this.odoo.getModels().execute("execute_kw", Arrays.asList(
                     this.odoo.getDatabase(), this.odoo.getUid(), this.odoo.getPassword(),
@@ -48,7 +48,7 @@ public class PermissionSystem {
         return 1;
     }
 
-    public int removeGroups(String playerUUID, int[] groupIds) {
+    public int removeGroups(String playerUUID, List<Integer> groupIds) {
         try {
             return (int) this.odoo.getModels().execute("execute_kw", Arrays.asList(
                     this.odoo.getDatabase(), this.odoo.getUid(), this.odoo.getPassword(),
